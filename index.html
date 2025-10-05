@@ -2,33 +2,47 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon site - Formules & Images</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Bienvenue sur mon site</h1>
-        <p>Voici quelques formules :</p>
-        <div class="card">
+    <header>
+        <div class="container">
+            <h1>Bienvenue sur mon site</h1>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="card">
+            <h2>Formules</h2>
             <p>E = mc²</p>
             <p>F = ma</p>
             <p>a² + b² = c²</p>
-        </div>
+        </section>
 
-        <h2>Mes images :</h2>
-        <div class="card">
+        <section class="card">
+            <h2>Mes images</h2>
             <img src="images/image1.jpg" alt="Image 1">
             <img src="images/image2.png" alt="Image 2">
-        </div>
+        </section>
 
-        <h2>Contact</h2>
-        <div class="card">
+        <section class="card">
+            <h2>Contact</h2>
             <form onsubmit="event.preventDefault(); alert('Formulaire simulé');">
-                <label>Email<br><input type="email" required style="width:100%;padding:6px;margin-top:4px"></label>
-                <label>Message<br><textarea required style="width:100%;padding:6px;margin-top:4px" rows="4"></textarea></label>
-                <button type="submit" style="margin-top:8px;padding:8px 12px;background:#0b74ff;color:white;border:none;border-radius:6px">Envoyer</button>
+                <label>Email<br><input type="email" required></label>
+                <label>Message<br><textarea required rows="4"></textarea></label>
+                <button type="submit">Envoyer</button>
             </form>
-        </div>
-    </div>
+        </section>
+    </main>
+
+    <footer class="container">
+        <p>©️ <span id="year"></span> MonSite</p>
+    </footer>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
