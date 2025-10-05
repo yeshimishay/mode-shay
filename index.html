@@ -1,72 +1,138 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mon site - Formules & Images</title>
-    <link rel="stylesheet" href="style.css">
-
-    <!-- Polices -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mode Shay - Prototype E-commerce</title>
+<link href="https://fonts.googleapis.com/css2?family=Alegreya:wght@400;700&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <!-- =======================
-     NAVBAR MODE SHAY
+   BANDE DÉROULANTE
 ======================= -->
-<nav class="navbar">
-    <div class="logo">MODESH</div>
-    <div class="menu-toggle" id="menu-toggle">☰</div>
-    <ul class="nav-links" id="nav-links">
-        <li><a href="#formules">BEST-SELLERS</a></li>
-        <li><a href="#images">SKINSCARE</a></li>
-        <li><a href="#contact">HAIRCARE</a></li>
-    </ul>
-</nav>
-
-<!-- =======================
-     CONTENU DU SITE
-======================= -->
-<div class="container">
-
-    <section class="images card" id="images">
-        <img src="images/image1.jpg" alt="Image 1">
-    </section>
-
-    <section class="formules card" id="formules">
-        <h2>PRODUITS BIO</h2>
-    </section>
-
-    <section class="images card">
-        <img src="images/image2.png" alt="Image 2">
-    </section>
-
-    <section class="contact card" id="contact">
-        <h2>Contact</h2>
-        <form onsubmit="event.preventDefault(); alert('Formulaire simulé');">
-            <label>Email<br>
-                <input type="email" required>
-            </label>
-            <label>Message<br>
-                <textarea required rows="4"></textarea>
-            </label>
-            <button type="submit">Envoyer</button>
-        </form>
-    </section>
+<div class="ticker">
+    <div class="ticker-wrap">
+        <span>Promo spéciale ✨ - Nouveautés Mode Shay - Livraison gratuite sur commande 50€+ - #Mode #Élégance #Shay</span>
+    </div>
 </div>
 
 <!-- =======================
-     SCRIPT MENU HAMBURGER
+   NAVBAR
+======================= -->
+<nav class="navbar">
+    <div class="logo">Mode Shay</div>
+    <ul class="nav-links">
+        <li><a href="#produits">Produits</a></li>
+        <li><a href="#mots-cles">Mots-clés</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-buttons">
+        <button class="btn" id="login-btn">Connexion</button>
+        <button class="btn" id="cart-btn">Panier 🛒 (<span id="cart-count">0</span>)</button>
+    </div>
+</nav>
+
+<!-- =======================
+   PRODUITS
+======================= -->
+<div class="container" id="produits">
+    <div class="card">
+        <img src="images/image1.jpg" alt="Produit 1">
+        <h3>Produit 1</h3>
+        <button class="add-cart">Ajouter au panier</button>
+    </div>
+    <div class="card">
+        <img src="images/image2.png" alt="Produit 2">
+        <h3>Produit 2</h3>
+        <button class="add-cart">Ajouter au panier</button>
+    </div>
+    <div class="card">
+        <img src="images/image3.jpg" alt="Produit 3">
+        <h3>Produit 3</h3>
+        <button class="add-cart">Ajouter au panier</button>
+    </div>
+    <div class="card">
+        <img src="images/image4.jpg" alt="Produit 4">
+        <h3>Produit 4</h3>
+        <button class="add-cart">Ajouter au panier</button>
+    </div>
+</div>
+
+<!-- =======================
+   MOTS-CLÉS STYLÉS
+======================= -->
+<section class="keywords" id="mots-cles">
+    <span>#Mode</span>
+    <span>#Élégance</span>
+    <span>#Shay</span>
+    <span>#Style</span>
+    <span>#Tendance</span>
+</section>
+
+<!-- =======================
+   CONTACT
+======================= -->
+<section class="contact" id="contact">
+    <h2>Contact</h2>
+    <form onsubmit="event.preventDefault(); alert('Formulaire simulé');">
+        <label>Email<br><input type="email" required></label>
+        <label>Message<br><textarea rows="4" required></textarea></label>
+        <button type="submit">Envoyer</button>
+    </form>
+</section>
+
+<!-- =======================
+   MODAL CONNEXION
+======================= -->
+<div id="login-modal" class="modal">
+  <div class="modal-content">
+    <span class="close">&times;</span>
+    <h2>Connexion</h2>
+    <form onsubmit="event.preventDefault(); alert('Connexion simulée');">
+        <label>Email<br><input type="email" required></label>
+        <label>Mot de passe<br><input type="password" required></label>
+        <button type="submit">Se connecter</button>
+    </form>
+  </div>
+</div>
+
+<!-- =======================
+   SCRIPT
 ======================= -->
 <script>
-const toggle = document.getElementById('menu-toggle');
-const links = document.getElementById('nav-links');
+// Panier dynamique
+const addButtons = document.querySelectorAll('.add-cart');
+const cartCount = document.getElementById('cart-count');
+let count = 0;
 
-toggle.addEventListener('click', () => {
-    links.classList.toggle('active');
+addButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+        count++;
+        cartCount.textContent = count;
+        btn.textContent = "Ajouté !";
+        btn.disabled = true;
+        setTimeout(() => {
+            btn.textContent = "Ajouter au panier";
+            btn.disabled = false;
+        }, 1000);
+    });
+});
+
+// Modal connexion
+const loginBtn = document.getElementById('login-btn');
+const modal = document.getElementById('login-modal');
+const closeModal = document.querySelector('.close');
+
+loginBtn.addEventListener('click', () => {
+    modal.style.display = 'flex';
+});
+closeModal.addEventListener('click', () => {
+    modal.style.display = 'none';
+});
+window.addEventListener('click', (e) => {
+    if(e.target == modal) modal.style.display = 'none';
 });
 </script>
 
