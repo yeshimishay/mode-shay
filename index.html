@@ -14,53 +14,59 @@
 </head>
 <body>
 
-<!-- 🧭 NAVBAR FIXE + MENU HAMBURGER -->
+<!-- =======================
+     NAVBAR MODE SHAY
+======================= -->
 <nav class="navbar">
-  <div class="logo">Mode Shay</div>
-  <div class="menu-toggle" id="menu-toggle">☰</div>
-  <ul class="nav-links" id="nav-links">
-    <li><a href="#formules">Formules</a></li>
-    <li><a href="#images">Images</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
+    <div class="logo">Mode Shay</div>
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="#formules">Formules</a></li>
+        <li><a href="#images">Images</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
 </nav>
 
-<!-- 🧱 CONTENU DU SITE -->
+<!-- =======================
+     CONTENU DU SITE
+======================= -->
 <div class="container">
 
-  <section class="images card" id="images">
-      <img src="images/image1.jpg" alt="Image 1">
-  </section>
-  
-  <section class="formules card" id="formules">
-      <h2>PRODUITS CONFECTIONNÉS À BASE D'INGRÉDIENTS D'ORIGINE NATURELLE</h2>
-  </section>
+    <section class="images card" id="images">
+        <img src="images/image1.jpg" alt="Image 1">
+    </section>
 
-  <section class="images card">
-      <img src="images/image2.png" alt="Image 2">
-  </section>
+    <section class="formules card" id="formules">
+        <h2>PRODUITS CONFECTIONNÉS À BASE D'INGRÉDIENTS D'ORIGINE NATURELLE</h2>
+    </section>
 
-  <section class="contact card" id="contact">
-      <h2>Contact</h2>
-      <form onsubmit="event.preventDefault(); alert('Formulaire simulé');">
-          <label>Email<br>
-              <input type="email" required>
-          </label>
-          <label>Message<br>
-              <textarea required rows="4"></textarea>
-          </label>
-          <button type="submit">Envoyer</button>
-      </form>
-  </section>
+    <section class="images card">
+        <img src="images/image2.png" alt="Image 2">
+    </section>
+
+    <section class="contact card" id="contact">
+        <h2>Contact</h2>
+        <form onsubmit="event.preventDefault(); alert('Formulaire simulé');">
+            <label>Email<br>
+                <input type="email" required>
+            </label>
+            <label>Message<br>
+                <textarea required rows="4"></textarea>
+            </label>
+            <button type="submit">Envoyer</button>
+        </form>
+    </section>
 </div>
 
-<!-- ⚙️ SCRIPT MENU HAMBURGER -->
+<!-- =======================
+     SCRIPT MENU HAMBURGER
+======================= -->
 <script>
 const toggle = document.getElementById('menu-toggle');
 const links = document.getElementById('nav-links');
 
 toggle.addEventListener('click', () => {
-  links.classList.toggle('active');
+    links.classList.toggle('active');
 });
 </script>
 
