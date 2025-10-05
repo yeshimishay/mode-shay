@@ -46,11 +46,16 @@ p {
 /* =======================
    Images
 ======================= */
+
 img {
-    max-width: 100%;
+    display: block;
+    width: 100%;
     height: auto;
-    margin: 10px 0; 
-    border: none;        
+    margin: 0;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    background: transparent;        
 }
 
 /* =======================
