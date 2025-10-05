@@ -2,11 +2,61 @@
    STYLES GÉNÉRAUX
 ======================= */
 body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background-color: #f5f0e1;  /* fond beige */
-    color: #333;
-    margin: 0;
-    padding: 40px;
+    font-family: 'Alegreya', serif;  /* texte général */
+    background-color: #f5f0e1;       /* fond beige */
+    color: #333333;
+}
+/* =======================
+   HEADER
+======================= */
+.site-header {
+    background-color: #0b74ff;
+    color: white;
+    padding: 7px 0;
+}
+
+.site-header .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-header .logo {
+    font-family: 'Alegreya', serif;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.site-header .menu a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    font-weight: 600;
+    transition: color 0.2s ease;
+}
+
+.site-header .menu a:hover {
+    color: #ffeeba;
+}
+
+/* Responsive menu */
+@media (max-width: 600px) {
+    .site-header .header-container {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .site-header .menu a {
+        margin-left: 0;
+    }
+}
+
+h1, h2 {
+    font-family: 'Alegreya', serif;  /* titres */
+    font-weight: 700;
 }
 
 /* =======================
@@ -21,7 +71,7 @@ body {
    TITRES ET TEXTE
 ======================= */
 h1 {
-    color: #0b74ff;
+    color: #d4a373;
     margin-bottom: 16px;
 }
 
