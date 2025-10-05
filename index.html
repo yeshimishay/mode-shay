@@ -5,44 +5,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mon site - Formules & Images</title>
     <link rel="stylesheet" href="style.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <h1>Bienvenue sur mon site</h1>
-        </div>
-    </header>
+    <div class="container">
 
-    <main class="container">
-        <section class="card">
-            <h2>Formules</h2>
-            <p>E = mc²</p>
-            <p>F = ma</p>
-            <p>a² + b² = c²</p>
+ <section class="images card">
+            
+            <img src="images/image1.jpg" alt="Image 1">
+            
+        </section>
+        
+        <section class="formules card">
+            <h2> PRODUITS CONFECTIONNÉS À BASE D'INGRÉDIENTS D'ORIGINES NATURELLES </h2>
+           
         </section>
 
-        <section class="card">
-            <h2>Mes images</h2>
-            <img src="images/image1.jpg" alt="Image 1">
+        <section class="images card">
+            
             <img src="images/image2.png" alt="Image 2">
         </section>
 
-        <section class="card">
+        <section class="contact card">
             <h2>Contact</h2>
             <form onsubmit="event.preventDefault(); alert('Formulaire simulé');">
-                <label>Email<br><input type="email" required></label>
-                <label>Message<br><textarea required rows="4"></textarea></label>
+                <label>Email<br>
+                    <input type="email" required>
+                </label>
+                <label>Message<br>
+                    <textarea required rows="4"></textarea>
+                </label>
                 <button type="submit">Envoyer</button>
             </form>
         </section>
-    </main>
-
-    <footer class="container">
-        <p>©️ <span id="year"></span> MonSite</p>
-    </footer>
-
-    <script>
-        document.getElementById('year').textContent = new Date().getFullYear();
-    </script>
+    </div>
 </body>
 </html>
