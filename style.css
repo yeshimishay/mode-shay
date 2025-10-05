@@ -1,21 +1,25 @@
 /* =======================
-   Styles généraux
+   STYLES GÉNÉRAUX
 ======================= */
 body {
-    font-family: 'Poppins', Arial, sans-serif; 
-    background-color: #f5f0e1;                  
-    color: #333333;
-    margin: 20px;
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: #f5f0e1;  /* fond beige */
+    color: #333;
+    margin: 0;
+    padding: 40px;
 }
 
-/* Conteneur principal */
+/* =======================
+   CONTENEUR PRINCIPAL
+======================= */
 .container {
     max-width: 1000px;
     margin: 0 auto;
-    padding: 20px;
 }
 
-/* Titres */
+/* =======================
+   TITRES ET TEXTE
+======================= */
 h1 {
     color: #0b74ff;
     margin-bottom: 16px;
@@ -27,42 +31,38 @@ h2 {
     margin-bottom: 12px;
 }
 
-/* Paragraphes */
 p {
     margin-bottom: 12px;
 }
 
 /* =======================
-   Cartes pour sections
+   SECTIONS (cartes)
 ======================= */
-.card img {
+.card {
+    background: transparent; /* plus de fond blanc */
+    padding: 0;
+    margin: 12px 0;
+    border: none;
+    box-shadow: none;
+}
+
+/* =======================
+   IMAGES (zéro bordure)
+======================= */
+img {
     display: block;
     width: 100%;
     height: auto;
     margin: 0;
     border: none !important;
+    outline: none !important;
     box-shadow: none !important;
     border-radius: 0 !important;
     background: transparent !important;
 }
 
 /* =======================
-   Images
-======================= */
-
-img {
-    display: block;
-    width: 100%;
-    height: auto;
-    margin: 0;
-    border: none;
-    box-shadow: none;
-    border-radius: 0;
-    background: transparent;        
-}
-
-/* =======================
-   Formulaire
+   FORMULAIRE
 ======================= */
 form input,
 form textarea {
@@ -91,11 +91,11 @@ form button:hover {
 }
 
 /* =======================
-   Responsive (mobile)
+   RESPONSIVE
 ======================= */
 @media (max-width: 600px) {
-    .container {
-        padding: 12px;
+    body {
+        padding: 20px;
     }
 
     h1 {
