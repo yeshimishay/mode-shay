@@ -35,12 +35,15 @@ p {
 /* =======================
    Cartes pour sections
 ======================= */
-.card {
-    background: #fff;
-    padding: 20px;
-    margin: 12px 0;
-    border-radius: 10px;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.05);
+.card img {
+    display: block;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+    background: transparent !important;
 }
 
 /* =======================
