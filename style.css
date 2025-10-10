@@ -119,6 +119,28 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
 
+/* Deuxième section produits avec image à gauche */
+.products-section .image-left {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.products-section .image-left img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.products-section .products-right {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    flex: 1;
+}
 /* Cartes produits */
 .card {
     background: #f5f0e1;
