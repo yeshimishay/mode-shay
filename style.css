@@ -76,7 +76,9 @@ body {
 .hero-banner {
     width: 100%;
     overflow: hidden;
-    margin-bottom: 20px;
+  
+    position: relative;
+
 }
 .hero-banner img {
     width: 100%;
@@ -85,6 +87,41 @@ body {
     object-position: 10% 19%;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.hero-banner {
+    position: relative; /* permet de placer du texte par-dessus l'image */
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-banner img {
+    width: 100%;
+    max-height: 50vh;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+/* Texte par-dessus l'image */
+.banner-text {
+    position: absolute;
+    top: 2%;           /* centre vertical */
+    left: 81%;          /* centre horizontal */
+    transform: translate(-50%, -50%);
+    text-align: center;
+    White-space: nowrap;
+   
+    color: 5C3A21;       /* couleur du texte */
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.6); /* pour le rendre lisible sur l'image */
+}
+
+.banner-text h1 {
+    font-size: 16px;
+    margin: 0;
+}
+
+.banner-text p {
+    font-size: 1.2rem;
+    margin: 0px 0 0 0;
 }
 
 /* SECTION PRODUITS + IMAGE DROITE */
@@ -112,8 +149,9 @@ body {
 }
 
 .image-right img {
-    width: 100%;
-    height: 100%; 
+    width: auto;
+    
+    height: 500%; 
     object-fit: cover;
     border-radius: 6px;
     box-shadow: 0 2px 6px rgba(0,0,0,0.1);
